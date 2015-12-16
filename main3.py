@@ -7,6 +7,7 @@ ch=0
 while ch!=1:
 	while True:
 		opt = raw_input("\nPlease Select Operation:\nAddition:\t1\nSubtraction:\t2\nMultiplication:\t3\nDivision:\t4\n")
+		# put raw_input in scan_input()
 		try:
 			opt = scan_input(opt)
 			if opt <= 0:
