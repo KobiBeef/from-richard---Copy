@@ -1,4 +1,4 @@
-from cal2 import MathDrill
+from cal2 import MathDrill, scan_input
 rich=MathDrill()
 name=raw_input("Please Enter Your Name: ")
 print "\nHi, %s\n\nWelcome To The Math Drill and Practice Program" % name
@@ -8,20 +8,30 @@ while ch!=1:
 	while True:
 		opt = raw_input("\nPlease Select Operation:\nAddition:\t1\nSubtraction:\t2\nMultiplication:\t3\nDivision:\t4\n")
 		try:
-			if len(opt) == 0:
-				print "enter a value"
-			elif len(opt) > 1:
-				print "enter value 1, 2, 3, and 4 only"
+			opt = scan_input(opt)
+			if opt <= 0:
+				print "enter positive numbers only"
+			elif opt > 4:
+				print "enter values 1 - 4 only"
 			else:
-				opt = int(opt)
-				if opt <= 0:
-					print "input positive numbers only"
-				elif opt > 4:
-					print "enter value 1, 2, 3, and 4 only"
-				else:
-					break
+				break
 		except:
-			print "enter integer only"		
+			print "enter integers only"
+		# try:
+		# 	if len(opt) == 0:
+		# 		print "enter a value"
+		# 	elif len(opt) > 1:
+		# 		print "enter value 1, 2, 3, and 4 only"
+		# 	else:
+		# 		opt = int(opt)
+		# 		if opt <= 0:
+		# 			print "input positive numbers only"
+		# 		elif opt > 4:
+		# 			print "enter value 1, 2, 3, and 4 only"
+		# 		else:
+		# 			break
+		# except:
+		# 	print "enter integer only"
 	# opt=int(raw_input("\nPlease Select Operation:\nAddition:\t1\nSubtraction:\t2\nMultiplication:\t3\nDivision:\t4\n"))
 	# put a input guardian for variable opt: should not accept string/s and interger below 1 and above 4
 
