@@ -1,6 +1,6 @@
 import random
 
-def scan_input():
+def scan_input(para1):
 	pass
 
 class MathDrill():
